@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import EventsList from './components/EventsList';
 import EventDetail from './components/EventDetail';
+import Dashboard from './components/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
 import './App.css';
@@ -45,6 +46,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <EventDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
               </ProtectedRoute>
             }
           />

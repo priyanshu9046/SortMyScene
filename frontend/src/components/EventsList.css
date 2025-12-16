@@ -8,8 +8,21 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px 40px;
-  text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
 }
 
 .app-title {
@@ -61,6 +74,28 @@
 }
 
 .logout-button:hover {
+  background: white;
+  color: var(--primary);
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+}
+
+.dashboard-button:hover {
   background: white;
   color: var(--primary);
   border-color: white;
@@ -199,6 +234,19 @@
     padding: 40px 20px 30px;
   }
 
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-text {
+    width: 100%;
+  }
+
+  .dashboard-button {
+    align-self: flex-end;
+  }
+
   .app-title {
     font-size: 36px;
   }
@@ -237,6 +285,16 @@
 
   .app-subtitle {
     font-size: 14px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-button {
+    width: 100%;
+    align-self: stretch;
   }
 
   .events-header {

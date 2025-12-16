@@ -74,12 +74,14 @@
 }
 
 .error-message {
-  background-color: #fef2f2;
-  color: var(--error);
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error-dark);
   padding: 14px 18px;
   border-radius: 10px;
   font-size: 14px;
-  border: 1px solid #fecaca;
+  border: 1px solid var(--error);
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .auth-button {

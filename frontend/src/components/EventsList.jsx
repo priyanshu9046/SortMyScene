@@ -76,8 +76,15 @@ const EventsList = () => {
   return (
     <div className="events-container">
       <div className="app-header">
-        <h1 className="app-title">BookTheShow</h1>
-        <p className="app-subtitle">Your Gateway to Unforgettable Experiences</p>
+        <div className="header-content">
+          <div className="header-text">
+            <h1 className="app-title">BookTheShow</h1>
+            <p className="app-subtitle">Your Gateway to Unforgettable Experiences</p>
+          </div>
+          <button onClick={() => navigate('/dashboard')} className="dashboard-button">
+            Dashboard
+          </button>
+        </div>
       </div>
       <div className="events-header">
         <h2>Available Events</h2>
