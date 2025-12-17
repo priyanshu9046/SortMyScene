@@ -203,6 +203,11 @@ class ReservationService {
   async completeReservation(reservation) {
     const now = new Date();
 
+    // Set expiresAt to far future (100 years) to prevent TTL deletion
+    // This ensures completed reservations are never deleted by MongoDB TTL index
+    const farFutureDate = new Date();
+    farFutureDate.setFullYear(farFutureDate.getFullYear() + 100);
+
     const updatedReservation = await Reservation.findOneAndUpdate(
       {
         _id: reservation._id,
@@ -210,7 +215,10 @@ class ReservationService {
         expiresAt: { $gt: now },
       },
       {
-        $set: { status: 'completed' },
+        $set: { 
+          status: 'completed',
+          expiresAt: farFutureDate, // Prevent TTL deletion
+        },
       },
       {
         new: true,
